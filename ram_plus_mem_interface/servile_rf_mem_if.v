@@ -15,30 +15,29 @@ module servile_rf_mem_if
     parameter rf_depth = $clog2(rf_regs*4),
     parameter aw = $clog2(depth))
    (
-    input wire		          i_clk,
-    input wire		          i_rst,
+    input wire		      i_clk,
+    input wire		      i_rst,
     input wire [rf_depth-1:0] i_waddr,
     input wire [7:0]	      i_wdata,
-    input wire		          i_wen,
+    input wire		      i_wen,
     input wire [rf_depth-1:0] i_raddr,
     output wire [7:0]	      o_rdata,
-    input wire		          i_ren,
-    input wire                sel_wen,
+    input wire		      i_ren
 
     output wire [aw-1:0]      o_sram_waddr,
     output wire [7:0]	      o_sram_wdata,
-    output wire		          o_sram_wen,
+    output wire		      o_sram_wen,
     output wire [aw-1:0]      o_sram_raddr,
-    input wire [7:0]	      i_sram_rdata,
-    output wire		          o_sram_ren,
+    input wire  [7:0]	      i_sram_rdata,
+    output wire		      o_sram_ren,
 
     input wire [aw-1:2]	      i_wb_adr,
     input wire [31:0]	      i_wb_dat,
     input wire [3:0]	      i_wb_sel,
-    input wire		          i_wb_we,
-    input wire		          i_wb_stb,
+    input wire		      i_wb_we,
+    input wire		      i_wb_stb,
     output wire [31:0]	      o_wb_rdt,
-    output reg		          o_wb_ack
+    output reg		      o_wb_ack
     );
 
    reg [1:0] 		bsel;
