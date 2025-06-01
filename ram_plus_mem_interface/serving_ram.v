@@ -38,19 +38,19 @@ module serving_ram
   reg [7:0] mem [0:depth-1] /* verilator public */;
   integer i;
 
-  // Synchronous read/write logic
+  
   always @(posedge i_clk) begin
-   // if (i_rst) begin
-   //   o_rdata <= 8'h00;
-   // end else begin
+   if (i_rst) begin
+   o_rdata <= 8'h00;
+   end else begin
       if (i_wen) begin
-        mem[i_waddr] <= i_wdata;  // Perform write
-        o_rdata      <= 8'h00;    // Mask output during write
+        mem[i_waddr] <= i_wdata;  
+        o_rdata      <= 8'h00;    
       end else begin
-        o_rdata <= mem[i_raddr];  // Perform read
+        o_rdata <= mem[i_raddr];  
       end
     end
-
+  end
 
   // Initial block: zero-initialize memory, then optionally preload file
 initial begin
