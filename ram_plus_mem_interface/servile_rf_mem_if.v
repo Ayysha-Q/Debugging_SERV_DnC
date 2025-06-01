@@ -62,7 +62,7 @@ module servile_rf_mem_if
    integer a;
    initial begin
    for (a = 0; a < depth; a = a + 1)
-    wb_rdt[a] = 23'h00;
+	   wb_rdt[a] = 1'b0;
    end
    assign o_wb_rdt = {i_sram_rdata, wb_rdt};
 
