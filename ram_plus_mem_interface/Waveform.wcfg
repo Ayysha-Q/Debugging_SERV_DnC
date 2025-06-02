@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="top_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="top_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="170.300 ns"></ZoomEndTime>
+      <Cursor1Time time="312.500 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="168"></NameColumnWidth>
+      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="104" />
+   <wvobject fp_name="/top_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/i_raddr_top" type="array">
+      <obj_property name="ElementShortName">i_raddr_top[7:0]</obj_property>
+      <obj_property name="ObjectShortName">i_raddr_top[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/i_ren_top" type="logic">
+      <obj_property name="ElementShortName">i_ren_top</obj_property>
+      <obj_property name="ObjectShortName">i_ren_top</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/i_waddr_top" type="array">
+      <obj_property name="ElementShortName">i_waddr_top[7:0]</obj_property>
+      <obj_property name="ObjectShortName">i_waddr_top[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/i_wb_adr_top" type="array">
+      <obj_property name="ElementShortName">i_wb_adr_top[9:2]</obj_property>
+      <obj_property name="ObjectShortName">i_wb_adr_top[9:2]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/i_wb_dat_top" type="array">
+      <obj_property name="ElementShortName">i_wb_dat_top[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i_wb_dat_top[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/i_wb_sel_top" type="array">
+      <obj_property name="ElementShortName">i_wb_sel_top[3:0]</obj_property>
+      <obj_property name="ObjectShortName">i_wb_sel_top[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/i_wb_stb_top" type="logic">
+      <obj_property name="ElementShortName">i_wb_stb_top</obj_property>
+      <obj_property name="ObjectShortName">i_wb_stb_top</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/i_wb_we_top" type="logic">
+      <obj_property name="ElementShortName">i_wb_we_top</obj_property>
+      <obj_property name="ObjectShortName">i_wb_we_top</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/i_wdata_top" type="array">
+      <obj_property name="ElementShortName">i_wdata_top[7:0]</obj_property>
+      <obj_property name="ObjectShortName">i_wdata_top[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/i_wen_top" type="logic">
+      <obj_property name="ElementShortName">i_wen_top</obj_property>
+      <obj_property name="ObjectShortName">i_wen_top</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/o_rdata_top" type="array">
+      <obj_property name="ElementShortName">o_rdata_top[7:0]</obj_property>
+      <obj_property name="ObjectShortName">o_rdata_top[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/o_wb_ack_top" type="logic">
+      <obj_property name="ElementShortName">o_wb_ack_top</obj_property>
+      <obj_property name="ObjectShortName">o_wb_ack_top</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/o_wb_rdt_top" type="array">
+      <obj_property name="ElementShortName">o_wb_rdt_top[31:0]</obj_property>
+      <obj_property name="ObjectShortName">o_wb_rdt_top[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/MEMSIZE" type="array">
+      <obj_property name="ElementShortName">MEMSIZE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">MEMSIZE[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/ram/i_clk" type="logic">
+      <obj_property name="ElementShortName">i_clk</obj_property>
+      <obj_property name="ObjectShortName">i_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/ram/i_waddr" type="array">
+      <obj_property name="ElementShortName">i_waddr[9:0]</obj_property>
+      <obj_property name="ObjectShortName">i_waddr[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/ram/i_wdata" type="array">
+      <obj_property name="ElementShortName">i_wdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">i_wdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/ram/i_wen" type="logic">
+      <obj_property name="ElementShortName">i_wen</obj_property>
+      <obj_property name="ObjectShortName">i_wen</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/ram/i_raddr" type="array">
+      <obj_property name="ElementShortName">i_raddr[9:0]</obj_property>
+      <obj_property name="ObjectShortName">i_raddr[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/ram/o_rdata" type="array">
+      <obj_property name="ElementShortName">o_rdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">o_rdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/ram/i_ren" type="logic">
+      <obj_property name="ElementShortName">i_ren</obj_property>
+      <obj_property name="ObjectShortName">i_ren</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/ram/mem" type="array">
+      <obj_property name="ElementShortName">mem[0:1023][7:0]</obj_property>
+      <obj_property name="ObjectShortName">mem[0:1023][7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/ram/depth" type="array">
+      <obj_property name="ElementShortName">depth[31:0]</obj_property>
+      <obj_property name="ObjectShortName">depth[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/ram/aw" type="array">
+      <obj_property name="ElementShortName">aw[31:0]</obj_property>
+      <obj_property name="ObjectShortName">aw[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/ram/memfile" type="array">
+      <obj_property name="ElementShortName">memfile[55:0]</obj_property>
+      <obj_property name="ObjectShortName">memfile[55:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/i_clk" type="logic">
+      <obj_property name="ElementShortName">i_clk</obj_property>
+      <obj_property name="ObjectShortName">i_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/i_rst" type="logic">
+      <obj_property name="ElementShortName">i_rst</obj_property>
+      <obj_property name="ObjectShortName">i_rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/i_waddr" type="array">
+      <obj_property name="ElementShortName">i_waddr[7:0]</obj_property>
+      <obj_property name="ObjectShortName">i_waddr[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/i_wdata" type="array">
+      <obj_property name="ElementShortName">i_wdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">i_wdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/i_wen" type="logic">
+      <obj_property name="ElementShortName">i_wen</obj_property>
+      <obj_property name="ObjectShortName">i_wen</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/i_raddr" type="array">
+      <obj_property name="ElementShortName">i_raddr[7:0]</obj_property>
+      <obj_property name="ObjectShortName">i_raddr[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/o_rdata" type="array">
+      <obj_property name="ElementShortName">o_rdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">o_rdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/i_ren" type="logic">
+      <obj_property name="ElementShortName">i_ren</obj_property>
+      <obj_property name="ObjectShortName">i_ren</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/o_sram_waddr" type="array">
+      <obj_property name="ElementShortName">o_sram_waddr[9:0]</obj_property>
+      <obj_property name="ObjectShortName">o_sram_waddr[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/o_sram_wdata" type="array">
+      <obj_property name="ElementShortName">o_sram_wdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">o_sram_wdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/o_sram_wen" type="logic">
+      <obj_property name="ElementShortName">o_sram_wen</obj_property>
+      <obj_property name="ObjectShortName">o_sram_wen</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/o_sram_raddr" type="array">
+      <obj_property name="ElementShortName">o_sram_raddr[9:0]</obj_property>
+      <obj_property name="ObjectShortName">o_sram_raddr[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/i_sram_rdata" type="array">
+      <obj_property name="ElementShortName">i_sram_rdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">i_sram_rdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/o_sram_ren" type="logic">
+      <obj_property name="ElementShortName">o_sram_ren</obj_property>
+      <obj_property name="ObjectShortName">o_sram_ren</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/i_wb_adr" type="array">
+      <obj_property name="ElementShortName">i_wb_adr[9:2]</obj_property>
+      <obj_property name="ObjectShortName">i_wb_adr[9:2]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/i_wb_dat" type="array">
+      <obj_property name="ElementShortName">i_wb_dat[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i_wb_dat[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/i_wb_sel" type="array">
+      <obj_property name="ElementShortName">i_wb_sel[3:0]</obj_property>
+      <obj_property name="ObjectShortName">i_wb_sel[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/i_wb_we" type="logic">
+      <obj_property name="ElementShortName">i_wb_we</obj_property>
+      <obj_property name="ObjectShortName">i_wb_we</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/i_wb_stb" type="logic">
+      <obj_property name="ElementShortName">i_wb_stb</obj_property>
+      <obj_property name="ObjectShortName">i_wb_stb</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/o_wb_rdt" type="array">
+      <obj_property name="ElementShortName">o_wb_rdt[31:0]</obj_property>
+      <obj_property name="ObjectShortName">o_wb_rdt[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/o_wb_ack" type="logic">
+      <obj_property name="ElementShortName">o_wb_ack</obj_property>
+      <obj_property name="ObjectShortName">o_wb_ack</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/bsel" type="array">
+      <obj_property name="ElementShortName">bsel[1:0]</obj_property>
+      <obj_property name="ObjectShortName">bsel[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/wb_en" type="logic">
+      <obj_property name="ElementShortName">wb_en</obj_property>
+      <obj_property name="ObjectShortName">wb_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/wb_we" type="logic">
+      <obj_property name="ElementShortName">wb_we</obj_property>
+      <obj_property name="ObjectShortName">wb_we</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/rf_waddr" type="array">
+      <obj_property name="ElementShortName">rf_waddr[9:0]</obj_property>
+      <obj_property name="ObjectShortName">rf_waddr[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/rf_raddr" type="array">
+      <obj_property name="ElementShortName">rf_raddr[9:0]</obj_property>
+      <obj_property name="ObjectShortName">rf_raddr[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/wb_rdt" type="array">
+      <obj_property name="ElementShortName">wb_rdt[23:0]</obj_property>
+      <obj_property name="ObjectShortName">wb_rdt[23:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/regzero" type="logic">
+      <obj_property name="ElementShortName">regzero</obj_property>
+      <obj_property name="ObjectShortName">regzero</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/depth" type="array">
+      <obj_property name="ElementShortName">depth[31:0]</obj_property>
+      <obj_property name="ObjectShortName">depth[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/rf_regs" type="array">
+      <obj_property name="ElementShortName">rf_regs[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rf_regs[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/rf_depth" type="array">
+      <obj_property name="ElementShortName">rf_depth[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rf_depth[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/aw" type="array">
+      <obj_property name="ElementShortName">aw[31:0]</obj_property>
+      <obj_property name="ObjectShortName">aw[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/ram/i_clk" type="logic">
+      <obj_property name="ElementShortName">i_clk</obj_property>
+      <obj_property name="ObjectShortName">i_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/ram/i_rst" type="logic">
+      <obj_property name="ElementShortName">i_rst</obj_property>
+      <obj_property name="ObjectShortName">i_rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/ram/i_waddr" type="array">
+      <obj_property name="ElementShortName">i_waddr[9:0]</obj_property>
+      <obj_property name="ObjectShortName">i_waddr[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/ram/i_wdata" type="array">
+      <obj_property name="ElementShortName">i_wdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">i_wdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/ram/i_wen" type="logic">
+      <obj_property name="ElementShortName">i_wen</obj_property>
+      <obj_property name="ObjectShortName">i_wen</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/ram/i_raddr" type="array">
+      <obj_property name="ElementShortName">i_raddr[9:0]</obj_property>
+      <obj_property name="ObjectShortName">i_raddr[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/ram/o_rdata" type="array">
+      <obj_property name="ElementShortName">o_rdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">o_rdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/ram/i_ren" type="logic">
+      <obj_property name="ElementShortName">i_ren</obj_property>
+      <obj_property name="ObjectShortName">i_ren</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/ram/mem" type="array">
+      <obj_property name="ElementShortName">mem[0:1023][7:0]</obj_property>
+      <obj_property name="ObjectShortName">mem[0:1023][7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/ram/i" type="array">
+      <obj_property name="ElementShortName">i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/ram/depth" type="array">
+      <obj_property name="ElementShortName">depth[31:0]</obj_property>
+      <obj_property name="ObjectShortName">depth[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/ram/aw" type="array">
+      <obj_property name="ElementShortName">aw[31:0]</obj_property>
+      <obj_property name="ObjectShortName">aw[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/ram/memfile" type="array">
+      <obj_property name="ElementShortName">memfile[55:0]</obj_property>
+      <obj_property name="ObjectShortName">memfile[55:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/i_clk" type="logic">
+      <obj_property name="ElementShortName">i_clk</obj_property>
+      <obj_property name="ObjectShortName">i_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/i_rst" type="logic">
+      <obj_property name="ElementShortName">i_rst</obj_property>
+      <obj_property name="ObjectShortName">i_rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/i_waddr" type="array">
+      <obj_property name="ElementShortName">i_waddr[7:0]</obj_property>
+      <obj_property name="ObjectShortName">i_waddr[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/i_wdata" type="array">
+      <obj_property name="ElementShortName">i_wdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">i_wdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/i_wen" type="logic">
+      <obj_property name="ElementShortName">i_wen</obj_property>
+      <obj_property name="ObjectShortName">i_wen</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/i_raddr" type="array">
+      <obj_property name="ElementShortName">i_raddr[7:0]</obj_property>
+      <obj_property name="ObjectShortName">i_raddr[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/o_rdata" type="array">
+      <obj_property name="ElementShortName">o_rdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">o_rdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/i_ren" type="logic">
+      <obj_property name="ElementShortName">i_ren</obj_property>
+      <obj_property name="ObjectShortName">i_ren</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/o_sram_waddr" type="array">
+      <obj_property name="ElementShortName">o_sram_waddr[9:0]</obj_property>
+      <obj_property name="ObjectShortName">o_sram_waddr[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/o_sram_wdata" type="array">
+      <obj_property name="ElementShortName">o_sram_wdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">o_sram_wdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/o_sram_wen" type="logic">
+      <obj_property name="ElementShortName">o_sram_wen</obj_property>
+      <obj_property name="ObjectShortName">o_sram_wen</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/o_sram_raddr" type="array">
+      <obj_property name="ElementShortName">o_sram_raddr[9:0]</obj_property>
+      <obj_property name="ObjectShortName">o_sram_raddr[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/i_sram_rdata" type="array">
+      <obj_property name="ElementShortName">i_sram_rdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">i_sram_rdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/o_sram_ren" type="logic">
+      <obj_property name="ElementShortName">o_sram_ren</obj_property>
+      <obj_property name="ObjectShortName">o_sram_ren</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/i_wb_adr" type="array">
+      <obj_property name="ElementShortName">i_wb_adr[9:2]</obj_property>
+      <obj_property name="ObjectShortName">i_wb_adr[9:2]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/i_wb_dat" type="array">
+      <obj_property name="ElementShortName">i_wb_dat[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i_wb_dat[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/i_wb_sel" type="array">
+      <obj_property name="ElementShortName">i_wb_sel[3:0]</obj_property>
+      <obj_property name="ObjectShortName">i_wb_sel[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/i_wb_we" type="logic">
+      <obj_property name="ElementShortName">i_wb_we</obj_property>
+      <obj_property name="ObjectShortName">i_wb_we</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/i_wb_stb" type="logic">
+      <obj_property name="ElementShortName">i_wb_stb</obj_property>
+      <obj_property name="ObjectShortName">i_wb_stb</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/o_wb_rdt" type="array">
+      <obj_property name="ElementShortName">o_wb_rdt[31:0]</obj_property>
+      <obj_property name="ObjectShortName">o_wb_rdt[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/o_wb_ack" type="logic">
+      <obj_property name="ElementShortName">o_wb_ack</obj_property>
+      <obj_property name="ObjectShortName">o_wb_ack</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/bsel" type="array">
+      <obj_property name="ElementShortName">bsel[1:0]</obj_property>
+      <obj_property name="ObjectShortName">bsel[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/wb_en" type="logic">
+      <obj_property name="ElementShortName">wb_en</obj_property>
+      <obj_property name="ObjectShortName">wb_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/wb_we" type="logic">
+      <obj_property name="ElementShortName">wb_we</obj_property>
+      <obj_property name="ObjectShortName">wb_we</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/rf_waddr" type="array">
+      <obj_property name="ElementShortName">rf_waddr[9:0]</obj_property>
+      <obj_property name="ObjectShortName">rf_waddr[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/rf_raddr" type="array">
+      <obj_property name="ElementShortName">rf_raddr[9:0]</obj_property>
+      <obj_property name="ObjectShortName">rf_raddr[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/wb_rdt" type="array">
+      <obj_property name="ElementShortName">wb_rdt[23:0]</obj_property>
+      <obj_property name="ObjectShortName">wb_rdt[23:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/regzero" type="logic">
+      <obj_property name="ElementShortName">regzero</obj_property>
+      <obj_property name="ObjectShortName">regzero</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/depth" type="array">
+      <obj_property name="ElementShortName">depth[31:0]</obj_property>
+      <obj_property name="ObjectShortName">depth[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/rf_regs" type="array">
+      <obj_property name="ElementShortName">rf_regs[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rf_regs[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/rf_depth" type="array">
+      <obj_property name="ElementShortName">rf_depth[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rf_depth[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_tb/dut/rf_mem_if/aw" type="array">
+      <obj_property name="ElementShortName">aw[31:0]</obj_property>
+      <obj_property name="ObjectShortName">aw[31:0]</obj_property>
+   </wvobject>
+</wave_config>
