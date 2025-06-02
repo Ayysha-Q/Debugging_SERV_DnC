@@ -19,45 +19,49 @@
 
 `default_nettype none
 module serving_ram
-  #(//Memory parameters
+  #( // Memory parameters
     parameter depth = 256,
     parameter aw    = $clog2(depth),  
-    parameter memfile = "TEST.vh")
-    
-   (input wire		    i_clk,
-    input wire [aw-1:0]	i_waddr,
-    input wire [7:0]	i_wdata,
-    input wire		    i_wen,
-    input wire [aw-1:0]	i_raddr,
-    output reg [7:0]	o_rdata,
-    input wire		    i_ren, 
-    output reg          ack
-    );
+    parameter memfile = "TEST.vh"
+  )
+  (
+    input wire          i_clk,
+    input wire          i_rst,
+    input wire [aw-1:0] i_waddr,
+    input wire [7:0]    i_wdata,
+    input wire          i_wen,
+    input wire [aw-1:0] i_raddr,
+    output reg [7:0]    o_rdata,
+    input wire          i_ren
+  );
 
-   reg [7:0]		mem [0:depth-1] /* verilator public */;
-   always @(posedge i_clk) begin
-      
-      if (i_wen)begin
-       mem[i_waddr]   <= i_wdata;
-        if (i_wdata == mem[i_waddr])
-        ack <= 1'b1;
-        else
-           ack <= 1'b0;
-       end
-      else  begin
-         o_rdata <= mem[i_raddr];
-         if(o_rdata == mem[i_raddr])
-           ack <= 1'b1;
-          else
-            ack <= 1'b0;
+  reg [7:0] mem [0:depth-1] /* verilator public */;
+  integer i;
+
+  // Synchronous read/write logic
+  always @(posedge i_clk) begin
+   if (i_rst) begin
+   o_rdata <= 8'h00;
+   end else begin
+      if (i_wen) begin
+        mem[i_waddr] <= i_wdata;  // Perform write
+        o_rdata      <= 8'h00;    // Mask output during write
+      end else begin
+        o_rdata <= mem[i_raddr];  // Perform read
       end
-   end
+    end
+end
 
-   initial
-     if(|memfile) begin
-	$display("Preloading %m from %s", memfile);
-	$readmemh(memfile, mem);
-     end
-     
+  // Initial block: zero-initialize memory, then optionally preload file
+initial begin
+  o_rdata = 8'h00;
+  for (i = 0; i < depth; i = i + 1)
+    mem[i] = 8'h00;
+
+  if (|memfile) begin
+    $display("Preloading %m from %s", memfile);
+    $readmemh(memfile, mem);
+  end
+end
 
 endmodule
