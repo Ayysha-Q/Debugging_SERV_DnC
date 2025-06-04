@@ -44,15 +44,14 @@ module serving_ram
    o_rdata <= 8'h00;
    end else begin
       if (i_wen) begin
-        mem[i_waddr] <= i_wdata;  // Perform write
-        o_rdata      <= 8'h00;    // Mask output during write
+        mem[i_waddr] <= i_wdata;  
+        o_rdata      <= 8'h00;    
       end else begin
-        o_rdata <= mem[i_raddr];  // Perform read
+        o_rdata <= mem[i_raddr]; 
       end
     end
 end
 
-  // Initial block: zero-initialize memory, then optionally preload file
 initial begin
   o_rdata = 8'h00;
   for (i = 0; i < depth; i = i + 1)
