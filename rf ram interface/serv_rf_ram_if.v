@@ -41,7 +41,11 @@ module serv_rf_ram_if
    output wire		   o_wen,
    output wire [aw-1:0]	   o_raddr,
    output wire		   o_ren,
-   input wire [width-1:0]  i_rdata);
+   output wire [CMSB:0] o_rcnt,
+   output wire [CMSB:0] o_wcnt,
+   output wire [width-1:0]  o_wdata0_r,
+   output wire [width-1:0]  o_wdata1_r,
+   input  wire  i_rdata);
 
    localparam ratio = width/W;
    localparam CMSB = 4-$clog2(W); //Counter MSB
@@ -49,7 +53,7 @@ module serv_rf_ram_if
 
    reg 				   rgnt;
    assign o_ready = rgnt | i_wreq;
-   reg [CMSB:0] 	  rcnt;
+   reg [CMSB:0] 	  rcnt;     // 4:0
 
    reg 		  rtrig1;
    /*
@@ -58,7 +62,7 @@ module serv_rf_ram_if
 
    wire [CMSB:0] 	     wcnt;
 
-   reg [width-1:0]   wdata0_r;
+   reg [width-1:0]   wdata0_r;   //[7:0]
    reg [width+W-1:0]   wdata1_r;
 
    reg 		     wen0_r;
@@ -73,13 +77,12 @@ module serv_rf_ram_if
    end else begin : gen_wtrig_ratio_neq_2
       reg wtrig0_r;
       always @(posedge i_clk) wtrig0_r <= wtrig0;
-      assign wtrig1 = wtrig0_r;
+      assign wtrig1 = wtrig0_r; 
    end
    endgenerate
 
-   assign 	     o_wdata = wtrig1 ?
-			       wdata1_r[width-1:0] :
-			       wdata0_r;
+   assign o_wdata = i_rst ? 0 : (wtrig1 ?
+		  (wdata1_r[width-1:0])  : wdata0_r);
 
    wire [raw-1:0] wreg  = wtrig1 ? i_wreg1 : i_wreg0;
    generate if (width == 32) begin : gen_w_eq_32
@@ -89,7 +92,7 @@ module serv_rf_ram_if
    end
    endgenerate
 
-   assign o_wen = (wtrig0 & wen0_r) | (wtrig1 & wen1_r);
+   assign o_wen = i_rst ? 1'b0 : (wtrig0 & wen0_r) | (wtrig1 & wen1_r);
 
    assign wcnt = rcnt-4;
 
@@ -98,7 +101,7 @@ module serv_rf_ram_if
 	 wen0_r    <= i_wen0;
 	 wen1_r    <= i_wen1;
       end
-
+      
       wdata0_r  <= {i_wdata0,wdata0_r[width-1:W]};
       wdata1_r  <= {i_wdata1,wdata1_r[width+W-1:W]};
 
@@ -124,8 +127,8 @@ module serv_rf_ram_if
 
    reg 		    rgate;
 
-   assign o_rdata0 = rdata0[B:0];
-   assign o_rdata1 = rtrig1 ? i_rdata[B:0] : rdata1[B:0];
+   assign o_rdata0 = (i_rst) ? 0 : rdata0[B:0];
+   assign o_rdata1 = (i_rst) ? 0 : rtrig1 ? i_rdata : rdata1[B:0];
 
    assign rtrig0 = (rcnt[l2r-1:0] == 1);
 
@@ -142,39 +145,47 @@ module serv_rf_ram_if
       always @(posedge i_clk) begin
 	 rdata1 <= {{W{1'b0}},rdata1[width-W-1:W]};
 	 if (rtrig1)
-	   rdata1[width-W-1:0] <= i_rdata[width-1:W];
+	   rdata1[width-W-1:0] <= i_rdata;
       end
    end else begin : gen_rdata1_w_eq_2
-      always @(posedge i_clk) if (rtrig1) rdata1 <= i_rdata[W*2-1:W];
+      always @(posedge i_clk) if (rtrig1) rdata1 <= i_rdata;
    end
    endgenerate
 
    always @(posedge i_clk) begin
       if (&rcnt | i_rreq)
-	rgate <= i_rreq;
-
-      rtrig1 <= rtrig0;
+	  rgate  <= i_rreq;
+      rtrig1 <= (rcnt[l2r-1:0] == 1);
       rcnt <= rcnt+{{CMSB{1'b0}},1'b1};
       if (i_rreq | i_wreq)
 	 rcnt <= {{CMSB-1{1'b0}},i_wreq,1'b0};
 
       rreq_r <= i_rreq;
       rgnt <= rreq_r;
+      
 
       rdata0 <= {{W{1'b0}}, rdata0[width-1:W]};
       if (rtrig0)
-	rdata0 <= i_rdata;
+	  rdata0 <= i_rdata;
+
 
       if (i_rst) begin
-	 if (reset_strategy != "NONE") begin
-	    rgate <= 1'b0;
-	    rgnt <= 1'b0;
+	  if (reset_strategy != "NONE") begin
+	    rgate  <= 1'b0;
+	    rgnt   <= 1'b0;
 	    rreq_r <= 1'b0;
-	    rcnt <= {CMSB+1{1'b0}};
+	    rdata0 <= {width{1'b0}};
+	    rcnt   <= {CMSB+1{1'b0}};
+	    wdata0_r <= {width{1'b0}};
+        wdata1_r <= {(width+W){1'b0}};
+        rdata1   <= {width{1'b0}};
 	 end
       end
    end
 
-
-
+   assign o_rcnt = rcnt;
+   assign o_wcnt = wcnt;
+   assign o_wdata0_r = wdata0_r;
+   assign o_wdata1_r = wdata1_r;
+   
 endmodule
