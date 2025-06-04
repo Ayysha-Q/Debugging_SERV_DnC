@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_serv_rf_ram_if_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_serv_rf_ram_if" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="103.934 ns"></ZoomEndTime>
+      <Cursor1Time time="474.500 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="168"></NameColumnWidth>
+      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="33" />
+   <wvobject fp_name="/tb_serv_rf_ram_if/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serv_rf_ram_if/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serv_rf_ram_if/i_wreq" type="logic">
+      <obj_property name="ElementShortName">i_wreq</obj_property>
+      <obj_property name="ObjectShortName">i_wreq</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serv_rf_ram_if/i_rreq" type="logic">
+      <obj_property name="ElementShortName">i_rreq</obj_property>
+      <obj_property name="ObjectShortName">i_rreq</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serv_rf_ram_if/o_ready" type="logic">
+      <obj_property name="ElementShortName">o_ready</obj_property>
+      <obj_property name="ObjectShortName">o_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serv_rf_ram_if/i_wreg0" type="array">
+      <obj_property name="ElementShortName">i_wreg0[5:0]</obj_property>
+      <obj_property name="ObjectShortName">i_wreg0[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serv_rf_ram_if/i_wreg1" type="array">
+      <obj_property name="ElementShortName">i_wreg1[5:0]</obj_property>
+      <obj_property name="ObjectShortName">i_wreg1[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serv_rf_ram_if/i_wen0" type="logic">
+      <obj_property name="ElementShortName">i_wen0</obj_property>
+      <obj_property name="ObjectShortName">i_wen0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serv_rf_ram_if/i_wen1" type="logic">
+      <obj_property name="ElementShortName">i_wen1</obj_property>
+      <obj_property name="ObjectShortName">i_wen1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serv_rf_ram_if/i_wdata0" type="array">
+      <obj_property name="ElementShortName">i_wdata0[0:0]</obj_property>
+      <obj_property name="ObjectShortName">i_wdata0[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serv_rf_ram_if/i_wdata1" type="array">
+      <obj_property name="ElementShortName">i_wdata1[0:0]</obj_property>
+      <obj_property name="ObjectShortName">i_wdata1[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serv_rf_ram_if/i_rreg0" type="array">
+      <obj_property name="ElementShortName">i_rreg0[5:0]</obj_property>
+      <obj_property name="ObjectShortName">i_rreg0[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serv_rf_ram_if/i_rreg1" type="array">
+      <obj_property name="ElementShortName">i_rreg1[5:0]</obj_property>
+      <obj_property name="ObjectShortName">i_rreg1[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serv_rf_ram_if/o_rdata0" type="array">
+      <obj_property name="ElementShortName">o_rdata0[0:0]</obj_property>
+      <obj_property name="ObjectShortName">o_rdata0[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serv_rf_ram_if/o_rdata1" type="array">
+      <obj_property name="ElementShortName">o_rdata1[0:0]</obj_property>
+      <obj_property name="ObjectShortName">o_rdata1[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serv_rf_ram_if/o_waddr" type="array">
+      <obj_property name="ElementShortName">o_waddr[7:0]</obj_property>
+      <obj_property name="ObjectShortName">o_waddr[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serv_rf_ram_if/o_wdata" type="array">
+      <obj_property name="ElementShortName">o_wdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">o_wdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serv_rf_ram_if/o_wen" type="logic">
+      <obj_property name="ElementShortName">o_wen</obj_property>
+      <obj_property name="ObjectShortName">o_wen</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serv_rf_ram_if/o_raddr" type="array">
+      <obj_property name="ElementShortName">o_raddr[7:0]</obj_property>
+      <obj_property name="ObjectShortName">o_raddr[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serv_rf_ram_if/o_ren" type="logic">
+      <obj_property name="ElementShortName">o_ren</obj_property>
+      <obj_property name="ObjectShortName">o_ren</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serv_rf_ram_if/o_rcnt" type="array">
+      <obj_property name="ElementShortName">o_rcnt[4:0]</obj_property>
+      <obj_property name="ObjectShortName">o_rcnt[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serv_rf_ram_if/o_wcnt" type="array">
+      <obj_property name="ElementShortName">o_wcnt[4:0]</obj_property>
+      <obj_property name="ObjectShortName">o_wcnt[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serv_rf_ram_if/o_wdata0_r" type="array">
+      <obj_property name="ElementShortName">o_wdata0_r[7:0]</obj_property>
+      <obj_property name="ObjectShortName">o_wdata0_r[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serv_rf_ram_if/o_wdata1_r" type="array">
+      <obj_property name="ElementShortName">o_wdata1_r[7:0]</obj_property>
+      <obj_property name="ObjectShortName">o_wdata1_r[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serv_rf_ram_if/i_rdata" type="logic">
+      <obj_property name="ElementShortName">i_rdata</obj_property>
+      <obj_property name="ObjectShortName">i_rdata</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serv_rf_ram_if/WIDTH" type="array">
+      <obj_property name="ElementShortName">WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">WIDTH[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serv_rf_ram_if/W" type="array">
+      <obj_property name="ElementShortName">W[31:0]</obj_property>
+      <obj_property name="ObjectShortName">W[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serv_rf_ram_if/CSR_REGS" type="array">
+      <obj_property name="ElementShortName">CSR_REGS[31:0]</obj_property>
+      <obj_property name="ObjectShortName">CSR_REGS[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serv_rf_ram_if/RAW" type="array">
+      <obj_property name="ElementShortName">RAW[31:0]</obj_property>
+      <obj_property name="ObjectShortName">RAW[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serv_rf_ram_if/B" type="array">
+      <obj_property name="ElementShortName">B[31:0]</obj_property>
+      <obj_property name="ObjectShortName">B[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serv_rf_ram_if/CMSB" type="array">
+      <obj_property name="ElementShortName">CMSB[31:0]</obj_property>
+      <obj_property name="ObjectShortName">CMSB[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serv_rf_ram_if/L2W" type="array">
+      <obj_property name="ElementShortName">L2W[31:0]</obj_property>
+      <obj_property name="ObjectShortName">L2W[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_serv_rf_ram_if/AW" type="array">
+      <obj_property name="ElementShortName">AW[31:0]</obj_property>
+      <obj_property name="ObjectShortName">AW[31:0]</obj_property>
+   </wvobject>
+</wave_config>
