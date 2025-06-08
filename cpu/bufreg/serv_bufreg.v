@@ -23,12 +23,13 @@ module serv_bufreg #(
    //External
    output wire [31:0] o_dbus_adr,
    //Extension
-   output wire [31:0] o_ext_rs1);
+   output wire [31:0] o_ext_rs1
+);
 
    wire		          c;
    wire [B:0]	      q;
-   reg [B:0]	      c_r;
-   reg [31:0]	      data;
+   reg  [B:0]	      c_r;
+   reg  [31:0]	      data;
    wire [B:0]	      clr_lsb;
 
    assign clr_lsb[0] = i_cnt0 & i_clr_lsb;
@@ -48,9 +49,13 @@ module serv_bufreg #(
 	 always @(posedge i_clk) begin
 	    if (i_en)
 	      data[31:2] <= {i_init ? q : {W{data[31] & i_sh_signed}}, data[31:3]};
+	    else
+	      data[31:2] <= 0;
 
 	    if (i_init ? (i_cnt0 | i_cnt1) : i_en)
 	      data[1:0] <= {i_init ? q : data[2], data[1]};
+	    else
+	      data[1:0] <= 0;
 	 end
 	 always @(*) lsb = data[1:0];
 	 assign o_q = data[0] & {W{i_en}};
@@ -60,5 +65,6 @@ module serv_bufreg #(
    assign o_dbus_adr = {data[31:2], 2'b00};
    assign o_ext_rs1  = data;
    assign o_lsb = (MDU & i_mdu_op) ? 2'b00 : lsb;
+   
 
 endmodule
