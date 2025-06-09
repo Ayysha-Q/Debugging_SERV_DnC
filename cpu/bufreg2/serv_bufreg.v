@@ -60,6 +60,8 @@ module serv_bufreg2
    always @(posedge i_clk) begin
       if (dat_en | i_load)
 	dat <= i_load ? i_dat : {o_op_b, dat[31:7], dat_shamt};
+	else 
+	dat <= 0;
    end
 
 endmodule
