@@ -18,7 +18,8 @@ module serv_immdec
    output wire 	     o_imm,
    //External
    input wire 	     i_wb_en,
-   input wire [31:7] i_wb_rdt);
+   input wire [31:7] i_wb_rdt
+   );
 
    reg 		     imm31;
 
@@ -37,6 +38,7 @@ module serv_immdec
 	 assign o_rs1_addr = imm19_12_20[8:4];
 	 assign o_rs2_addr = imm24_20;
 	 assign o_rd_addr  = imm11_7;
+	
 
 	 always @(posedge i_clk) begin
 	    if (i_wb_en) begin
@@ -45,19 +47,28 @@ module serv_immdec
 	    end
 	    if (i_wb_en | (i_cnt_en & i_immdec_en[1]))
 	      imm19_12_20 <= i_wb_en ? {i_wb_rdt[19:12],i_wb_rdt[20]} : {i_ctrl[3] ? signbit : imm24_20[0], imm19_12_20[8:1]};
+	    else
+	      imm19_12_20 <= 0;
 	    if (i_wb_en | (i_cnt_en))
 	      imm7        <= i_wb_en ? i_wb_rdt[7]                    : signbit;
+	    else imm7 <= 0;
 
 	    if (i_wb_en | (i_cnt_en & i_immdec_en[3]))
 	      imm30_25    <= i_wb_en ? i_wb_rdt[30:25] : {i_ctrl[2] ? imm7 : i_ctrl[1] ? signbit : imm19_12_20[0], imm30_25[5:1]};
+	    else 
+	    imm30_25    <= 0;
 
 	    if (i_wb_en | (i_cnt_en & i_immdec_en[2]))
 	      imm24_20    <= i_wb_en ? i_wb_rdt[24:20] : {imm30_25[0], imm24_20[4:1]};
+	    else 
+	      imm24_20 <= 0;
 
 	    if (i_wb_en | (i_cnt_en & i_immdec_en[0]))
 	      imm11_7     <= i_wb_en ? i_wb_rdt[11:7] : {imm30_25[0], imm11_7[4:1]};
+	    else 
+	      imm11_7 <= 0;
 	 end
-      end else begin : gen_separate_imm_regs
+     end else begin : gen_separate_imm_regs
 	 reg [4:0]  rd_addr;
 	 reg [4:0]  rs1_addr;
 	 reg [4:0]  rs2_addr;
@@ -91,5 +102,6 @@ module serv_immdec
    endgenerate
 
 	 assign o_imm = i_cnt_done ? signbit : i_ctrl[0] ? imm11_7[0] : imm24_20[0];
+
 
 endmodule
