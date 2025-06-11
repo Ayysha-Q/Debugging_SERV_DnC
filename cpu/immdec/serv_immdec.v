@@ -45,6 +45,8 @@ module serv_immdec
 	       /* CSR immediates are always zero-extended, hence clear the signbit */
 	       imm31     <= i_wb_rdt[31];
 	    end
+	    else
+	    imm31     <= 0;
 	    if (i_wb_en | (i_cnt_en & i_immdec_en[1]))
 	      imm19_12_20 <= i_wb_en ? {i_wb_rdt[19:12],i_wb_rdt[20]} : {i_ctrl[3] ? signbit : imm24_20[0], imm19_12_20[8:1]};
 	    else
