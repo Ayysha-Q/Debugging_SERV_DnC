@@ -28,7 +28,7 @@ module serv_bufreg #(
 
    wire		          c;
    wire [B:0]	      q;
-   reg  [B:0]	      c_r;
+   reg  [B:0]	      c_r = 0;
    reg  [31:0]	      data;
    wire [B:0]	      clr_lsb;
 
