@@ -57,12 +57,6 @@ module serv_state
    output wire 	     o_rf_rreq,
    output wire 	     o_rf_wreq,
    input wire 	     i_rf_ready,
-   output wire       init_done_out,
-   output wire       stage_two_req_out,
-   output wire [4:2] o_cnt_out,
-   output wire [3:0] cnt_r_out,
-   output wire       misalign_trap_sync_out,
-   output wire       ibus_cyc_out,
    output wire 	     o_rf_rd_en);
 
    reg 	stage_two_req;
@@ -143,13 +137,20 @@ module serv_state
       //   o_ibus_cyc gets asserted to fetch a new instruction
       //3. When i_ibus_ack, a new instruction is fetched and o_ibus_cyc gets
       //   deasserted to finish the transaction
-      if (i_ibus_ack | o_cnt_done | i_rst)
+    if (i_ibus_ack | o_cnt_done | i_rst)
 	ibus_cyc <= o_ctrl_pc_en | i_rst;
+	else
+	ibus_cyc <= 0;
 
       if (o_cnt_done) begin
 	 init_done <= o_init & !init_done;
 	 o_ctrl_jump <= o_init & take_branch;
       end
+      else begin
+      init_done <= 0;
+	  o_ctrl_jump <= 0;
+      end
+      
 
       //Need a strobe for the first cycle in the IDLE state after INIT
       stage_two_req <= o_cnt_done & o_init;
@@ -186,25 +187,30 @@ module serv_state
        just need to check if cnt_r is not zero to see if the counter is
        currently running
        */
-      if (W == 1) begin : gen_cnt_w_eq_1
+     if (W == 1) begin : gen_cnt_w_eq_1
 	 reg [3:0] cnt_lsb;
+	 wire shift_en = (cnt_lsb != 4'b0000) | (i_rf_ready & !o_cnt_en);
 	 always @(posedge i_clk) begin
-            o_cnt <= o_cnt + {2'd0,cnt_r[3]};
-            cnt_lsb <= {cnt_lsb[2:0],(cnt_lsb[3] & !o_cnt_done) | (i_rf_ready & !o_cnt_en)};
-	    if (i_rst & (RESET_STRATEGY != "NONE")) begin
+	 if (i_rst) begin
 	       o_cnt   <= 3'd0;
 	       cnt_lsb <= 4'b0000;
 	    end
+	    else if (shift_en) begin
+	        cnt_lsb <= {cnt_lsb[2:0],(cnt_lsb[3] & !o_cnt_done) | (i_rf_ready & !o_cnt_en)};
+            o_cnt <= o_cnt + {2'd0,cnt_r[3]};
+        end
+	    
 	 end
 	 assign cnt_r = cnt_lsb;
 	 assign o_cnt_en = |cnt_lsb;
-      end else if (W == 4) begin : gen_cnt_w_eq_4
+   end else if (W == 4) begin : gen_cnt_w_eq_4
 	 reg cnt_en;
 	 always @(posedge i_clk) begin
             if (i_rf_ready) cnt_en <= 1; else
             if (o_cnt_done) cnt_en <= 0;
+            else cnt_en <= 0;
             o_cnt <= o_cnt + { 2'd0, cnt_en };
-	    if (i_rst & (RESET_STRATEGY != "NONE")) begin
+	    if (i_rst) begin
 	       o_cnt   <= 3'd0;
 	       cnt_en <= 1'b0;
 	    end
@@ -234,12 +240,4 @@ module serv_state
 	 assign misalign_trap_sync = 1'b0;
       end
    endgenerate
-   
-   // Additional signals for visualization only.
-   assign init_done_out = init_done;
-   assign stage_two_req_out = stage_two_req;
-   assign cnt_r_out = cnt_r;
-   assign o_cnt_out = o_cnt;
-   assign misalign_trap_sync_out = misalign_trap_sync;
-   assign ibus_cyc_out = ibus_cyc;
 endmodule
