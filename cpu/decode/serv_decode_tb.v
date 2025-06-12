@@ -25,11 +25,7 @@ module serv_decode_tb;
   wire        o_csr_mstatus_en, o_csr_mie_en, o_csr_mcause_en, o_csr_d_sel, o_csr_imm_en, o_mtval_pc;
   wire [3:0]  o_immdec_ctrl, o_immdec_en;
   wire        o_op_b_source, o_rd_mem_en, o_rd_csr_en, o_rd_alu_en;
-  // ADDITIONAL
-  wire [2:0] funct3_out;
-  wire [4:0] opcode_out;
-  wire csr_op_out;
-  wire csr_valid_out;
+ 
 
   serv_decode #(.PRE_REGISTER(1), .MDU(1)) dut (
     .clk(clk),
@@ -79,11 +75,7 @@ module serv_decode_tb;
     .o_op_b_source(o_op_b_source),
     .o_rd_mem_en(o_rd_mem_en), 
     .o_rd_csr_en(o_rd_csr_en),
-    .o_rd_alu_en(o_rd_alu_en),
-    .funct3_out(funct3_out),
-    .opcode_out(opcode_out),
-    .csr_op_out(csr_op_out),
-    .csr_valid_out(csr_valid_out)
+    .o_rd_alu_en(o_rd_alu_en)
   );
 
   // Clock generation: 32 MHz ? 31.25 ns
