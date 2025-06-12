@@ -92,12 +92,30 @@ module serv_immdec
                rs1_addr <= i_wb_rdt[19:15];
                rs2_addr <= i_wb_rdt[24:20];
 	    end
+	    else begin
+	     imm31       <= 0;
+	       imm19_12_20 <= 0;
+	       imm7        <= 0;
+	       imm30_25    <= 0;
+	       imm24_20    <= 0;
+	       imm11_7     <= 0;
+           rd_addr  <= 0;
+           rs1_addr <= 0;
+           rs2_addr <= 0;
+	    end
 	    if (i_cnt_en) begin
 	       imm19_12_20 <= {i_ctrl[3] ? signbit : imm24_20[0], imm19_12_20[8:1]};
 	       imm7        <= signbit;
 	       imm30_25    <= {i_ctrl[2] ? imm7 : i_ctrl[1] ? signbit : imm19_12_20[0], imm30_25[5:1]};
 	       imm24_20    <= {imm30_25[0], imm24_20[4:1]};
 	       imm11_7     <= {imm30_25[0], imm11_7[4:1]};
+	    end
+	    else begin
+	       imm19_12_20 <= 0;
+	       imm7        <= 0;
+	       imm30_25    <= 0;
+	       imm24_20    <= 0;
+	       imm11_7     <= 0;
 	    end
 	 end
       end
