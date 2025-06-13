@@ -1,4 +1,4 @@
-`default_nettype none
+`default_nettype wire
 module serv_alu
   #(
    parameter W = 1,
@@ -6,6 +6,7 @@ module serv_alu
   )
   (
    input wire 	    clk,
+   input wire       i_rst,
    //State
    input wire 	    i_en,
    input wire 	    i_cnt0,
@@ -20,7 +21,8 @@ module serv_alu
    input wire  [B:0] i_rs1,
    input wire  [B:0] i_op_b,
    input wire  [B:0] i_buf,
-   output wire [B:0] o_rd);
+   output wire [B:0] o_rd
+   );
 
    wire [B:0]  result_add;
    wire [B:0]  result_slt;
@@ -28,7 +30,7 @@ module serv_alu
    reg 	       cmp_r;
 
    wire        add_cy;
-   reg [B:0]   add_cy_r;
+   reg [B:0]   add_cy_r = 0;
 
    //Sign-extended operands
    wire rs1_sx  = i_rs1[B] & i_cmp_sig;
@@ -69,13 +71,20 @@ module serv_alu
                  ({W{i_rd_sel[0]}} & result_add) |
                  ({W{i_rd_sel[1]}} & result_slt) |
                  ({W{i_rd_sel[2]}} & result_bool);
+   
 
    always @(posedge clk) begin
+   if (i_rst)
+      add_cy_r <= 0;
+      else begin
       add_cy_r    <= {W{1'b0}};
       add_cy_r[0] <= i_en ? add_cy : i_sub;
+      end
 
       if (i_en)
 	cmp_r <= o_cmp;
+	else
+	cmp_r <= 0;
    end
 
 endmodule
