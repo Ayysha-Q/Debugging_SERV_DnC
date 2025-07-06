@@ -5,7 +5,7 @@ module serving_ram_tb;
     // Parameters
     parameter DEPTH = 256;
     parameter AW = $clog2(DEPTH);
-    parameter MEMFILE = "TEST.vh";
+    parameter MEMFILE = "TEST.hex";
 
     // DUT Signals
     reg                 clk;
